@@ -20,7 +20,7 @@ class MoviesViewController: UIViewController {
     }
 }
 
-extension MoviesViewController: MoviesPresenterDelegate {
+extension MoviesViewController: MoviesPresenterViewDelegate {
     func moviesPresenterDidGetMovies(presenter: MoviesPresenter) {
         tableView.reloadData()
     }

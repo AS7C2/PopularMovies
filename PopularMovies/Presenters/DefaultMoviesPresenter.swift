@@ -7,7 +7,7 @@
 //
 
 class DefaultMoviesPresenter: MoviesPresenter {
-    weak var delegate: MoviesPresenterDelegate?
+    weak var viewDelegate: MoviesPresenterViewDelegate?
     
     private let getMoviesInteractor: GetMoviesInteractor
     private let movieDisplayModelFactory: MovieDisplayModelFactory
@@ -27,8 +27,8 @@ class DefaultMoviesPresenter: MoviesPresenter {
                 self.currentMovies.removeAll()
                 self.originalMovies.append(contentsOf: movies)
                 self.currentMovies.append(contentsOf: movies)
-                if let delegate = self.delegate {
-                    delegate.moviesPresenterDidGetMovies(presenter: self)
+                if let viewDelegate = self.viewDelegate {
+                    viewDelegate.moviesPresenterDidGetMovies(presenter: self)
                 }
             default:
                 break
@@ -50,8 +50,8 @@ class DefaultMoviesPresenter: MoviesPresenter {
             }
             self.currentMovies.append(contentsOf: searchedMovies)
         }
-        if let delegate = self.delegate {
-            delegate.moviesPresenterDidGetMovies(presenter: self)
+        if let viewDelegate = self.viewDelegate {
+            viewDelegate.moviesPresenterDidGetMovies(presenter: self)
         }
     }
     

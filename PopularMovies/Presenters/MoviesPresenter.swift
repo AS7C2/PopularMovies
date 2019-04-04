@@ -6,12 +6,12 @@
 //  Copyright © 2019 Andrei Sherstniuk. All rights reserved.
 //
 
-protocol MoviesPresenterDelegate: class {
+protocol MoviesPresenterViewDelegate: class {
     func moviesPresenterDidGetMovies(presenter: MoviesPresenter)
 }
 
 protocol MoviesPresenter {
-    var delegate: MoviesPresenterDelegate? { get set }
+    var viewDelegate: MoviesPresenterViewDelegate? { get set }
     
     func getMovies()
     

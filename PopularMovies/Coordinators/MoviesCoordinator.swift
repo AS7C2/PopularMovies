@@ -25,7 +25,7 @@ class MoviesCoordinator {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MOVIES") as! MoviesViewController
         viewController.presenter = presenter
-        presenter.delegate = viewController
+        presenter.viewDelegate = viewController
         
         let navigationController =  UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
