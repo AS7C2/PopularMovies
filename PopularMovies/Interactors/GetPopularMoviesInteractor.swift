@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andrei Sherstniuk. All rights reserved.
 //
 
-class GetPopularMoviesInteractor {
+class GetPopularMoviesInteractor: GetMoviesInteractor {
     private let service: GetPopularMoviesService
     private let repository: MoviesRepository
     
