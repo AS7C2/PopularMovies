@@ -15,8 +15,8 @@ class GetPopularMoviesInteractor {
         self.repository = repository
     }
     
-    func execute(completionHandler: @escaping (Result<[Movie], Error>) -> Void) {
-        return service.execute { result in
+    func get(completionHandler: @escaping (Result<[Movie], Error>) -> Void) {
+        return service.get { result in
             switch result {
             case .success(let movies):
                 for movie in movies {

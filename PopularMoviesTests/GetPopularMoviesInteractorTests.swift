@@ -16,7 +16,7 @@ class GetPopularMoviesInteractorTests: XCTestCase {
         let service = GetPopularMoviesServiceStub()
         let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         var moviesCount: Int?
-        interactor.execute { result in
+        interactor.get { result in
             switch result {
             case .success(let movies):
                 moviesCount = movies.count
@@ -33,7 +33,7 @@ class GetPopularMoviesInteractorTests: XCTestCase {
         let service = GetPopularMoviesServiceDummy()
         let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         var moviesCount: Int?
-        interactor.execute { result in
+        interactor.get { result in
             switch result {
             case .success(let movies):
                 moviesCount = movies.count

@@ -7,7 +7,7 @@
 //
 
 class GetPopularMoviesServiceStub: GetPopularMoviesService {
-    func execute(completionHandler: @escaping (Result<[Movie], Error>) -> Void) {
+    func get(completionHandler: @escaping (Result<[Movie], Error>) -> Void) {
         completionHandler(.success([]))
     }
 }
