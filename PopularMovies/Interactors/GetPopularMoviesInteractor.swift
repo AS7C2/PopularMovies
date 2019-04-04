@@ -8,12 +8,24 @@
 
 class GetPopularMoviesInteractor {
     private let service: GetPopularMoviesService
+    private let repository: MoviesRepository
     
-    init(service: GetPopularMoviesService) {
+    init(service: GetPopularMoviesService, repository: MoviesRepository) {
         self.service = service
+        self.repository = repository
     }
     
     func execute(completionHandler: @escaping (Result<[Movie], Error>) -> Void) {
-        return service.execute(completionHandler: completionHandler)
+        return service.execute { result in
+            switch result {
+            case .success(let movies):
+                for movie in movies {
+                    self.repository.save(movie: movie)
+                }
+                completionHandler(result)
+            case.failure(_):
+                break
+            }
+        }
     }
 }

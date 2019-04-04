@@ -12,8 +12,9 @@ import XCTest
 class GetPopularMoviesInteractorTests: XCTestCase {
 
     func testEmptyResult() {
+        let repository = MoviesRepositorySpy()
         let service = GetPopularMoviesServiceStub()
-        let interactor = GetPopularMoviesInteractor(service: service)
+        let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         var moviesCount: Int?
         interactor.execute { result in
             switch result {
@@ -23,12 +24,14 @@ class GetPopularMoviesInteractorTests: XCTestCase {
                 XCTFail()
             }
         }
+        XCTAssertEqual(repository.count, 0)
         XCTAssertEqual(moviesCount, 0)
     }
 
     func testNotEmptyResult() {
+        let repository = MoviesRepositorySpy()
         let service = GetPopularMoviesServiceDummy()
-        let interactor = GetPopularMoviesInteractor(service: service)
+        let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         var moviesCount: Int?
         interactor.execute { result in
             switch result {
@@ -38,6 +41,7 @@ class GetPopularMoviesInteractorTests: XCTestCase {
                 XCTFail()
             }
         }
+        XCTAssertEqual(repository.count, 2)
         XCTAssertEqual(moviesCount, 2)
     }
 }
