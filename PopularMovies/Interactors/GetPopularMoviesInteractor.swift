@@ -27,12 +27,12 @@ class GetPopularMoviesInteractor {
                             switch saveResult {
                             case .success:
                                 completionHandler(getResult)
-                            case .failure:
-                                break
+                            case .failure(let error):
+                                completionHandler(.failure(error))
                             }
                         }
-                    case .failure:
-                        break
+                    case .failure(let error):
+                        completionHandler(.failure(error))
                     }
                 }
             case.failure:

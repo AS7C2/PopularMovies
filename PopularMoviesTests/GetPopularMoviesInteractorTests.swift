@@ -63,4 +63,36 @@ class GetPopularMoviesInteractorTests: XCTestCase {
         }
         XCTAssertEqual(moviesCount, 4)
     }
+    
+    func testFailureOnSeriveSuccessAndRepositoryFailure() {
+        let repository = MoviesRepositoryErrorDummy()
+        let service = GetPopularMoviesServiceStub()
+        let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
+        var expectedError: Error?
+        interactor.get { result in
+            switch result {
+            case .success:
+                XCTFail()
+            case .failure(let error):
+                expectedError = error
+            }
+        }
+        XCTAssertNotNil(expectedError)
+    }
+    
+    func testFailureOnSeriveFailureAndRepositoryFailure() {
+        let repository = MoviesRepositoryErrorDummy()
+        let service = GetPopularMoviesServiceErrorDummy()
+        let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
+        var expectedError: Error?
+        interactor.get { result in
+            switch result {
+            case .success:
+                XCTFail()
+            case .failure(let error):
+                expectedError = error
+            }
+        }
+        XCTAssertNotNil(expectedError)
+    }
 }
