@@ -7,9 +7,15 @@
 //
 
 protocol MoviesPresenterDelegate: class {
-    
+    func moviesPresenterDidGetMovies(presenter: MoviesPresenter)
 }
 
 protocol MoviesPresenter {
+    var delegate: MoviesPresenterDelegate? { get set }
     
+    func getMovies()
+    
+    var numberOfMovies: Int { get }
+    
+    func movie(atIndex index: Int) -> Movie
 }
