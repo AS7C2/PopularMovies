@@ -26,8 +26,15 @@ class MoviesCoordinator {
         let viewController = storyboard.instantiateViewController(withIdentifier: "MOVIES") as! MoviesViewController
         viewController.presenter = presenter
         presenter.viewDelegate = viewController
+        presenter.coordinatorDelegate = self
         
         let navigationController =  UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
+    }
+}
+
+extension MoviesCoordinator: MoviesPresenterCoordinatorDelegate {
+    func moviesPresenter(presenter: MoviesPresenter, didSelectMovie movie: Movie) {
+        print(movie.id)
     }
 }

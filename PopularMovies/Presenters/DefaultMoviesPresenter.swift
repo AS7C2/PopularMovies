@@ -8,6 +8,7 @@
 
 class DefaultMoviesPresenter: MoviesPresenter {
     weak var viewDelegate: MoviesPresenterViewDelegate?
+    weak var coordinatorDelegate: MoviesPresenterCoordinatorDelegate?
     
     private let getMoviesInteractor: GetMoviesInteractor
     private let movieDisplayModelFactory: MovieDisplayModelFactory
@@ -67,5 +68,8 @@ class DefaultMoviesPresenter: MoviesPresenter {
     
     func selectMovie(atIndex index: Int) {
         let movie = currentMovies[index]
+        if let coordinatorDelegate = self.coordinatorDelegate {
+            coordinatorDelegate.moviesPresenter(presenter: self, didSelectMovie: movie)
+        }
     }
 }

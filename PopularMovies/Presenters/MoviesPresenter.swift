@@ -10,8 +10,13 @@ protocol MoviesPresenterViewDelegate: class {
     func moviesPresenterDidGetMovies(presenter: MoviesPresenter)
 }
 
+protocol MoviesPresenterCoordinatorDelegate: class {
+    func moviesPresenter(presenter: MoviesPresenter, didSelectMovie movie: Movie)
+}
+
 protocol MoviesPresenter {
     var viewDelegate: MoviesPresenterViewDelegate? { get set }
+    var coordinatorDelegate: MoviesPresenterCoordinatorDelegate? { get set }
     
     func getMovies()
     
