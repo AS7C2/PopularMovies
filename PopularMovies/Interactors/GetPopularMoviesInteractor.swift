@@ -19,6 +19,7 @@ class GetPopularMoviesInteractor {
         return service.get { result in
             switch result {
             case .success(let movies):
+                self.repository.clear()
                 for movie in movies {
                     self.repository.save(movie: movie)
                 }

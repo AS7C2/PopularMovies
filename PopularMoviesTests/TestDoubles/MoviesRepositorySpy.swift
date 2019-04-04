@@ -18,4 +18,8 @@ class MoviesRepositorySpy: MoviesRepository {
     func save(movie: Movie) {
         movies.append(movie)
     }
+    
+    func clear() {
+        movies.removeAll()
+    }
 }

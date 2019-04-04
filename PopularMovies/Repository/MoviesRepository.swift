@@ -8,4 +8,6 @@
 
 protocol MoviesRepository {
     func save(movie: Movie)
+    
+    func clear()
 }
