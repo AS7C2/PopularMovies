@@ -10,10 +10,12 @@ class DefaultMoviesPresenter: MoviesPresenter {
     weak var delegate: MoviesPresenterDelegate?
     
     private let getMoviesInteractor: GetMoviesInteractor
+    private let movieDisplayModelFactory: MovieDisplayModelFactory
     private var movies: [Movie] = []
     
-    init(getMoviesInteractor: GetMoviesInteractor) {
+    init(getMoviesInteractor: GetMoviesInteractor, movieDisplayModelFactory: MovieDisplayModelFactory) {
         self.getMoviesInteractor = getMoviesInteractor
+        self.movieDisplayModelFactory = movieDisplayModelFactory
     }
     
     func getMovies() {
@@ -37,7 +39,7 @@ class DefaultMoviesPresenter: MoviesPresenter {
         }
     }
     
-    func movie(atIndex index: Int) -> Movie {
-        return movies[index]
+    func movie(atIndex index: Int) -> MovieDisplayModel {
+        return movieDisplayModelFactory.create(fromMovie: movies[index])
     }
 }

@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MovieCell: UITableViewCell {
+    var model: MovieDisplayModel! {
+        didSet {
+            movieTitleLabel.text = model.title
+        }
+    }
     
     @IBOutlet weak var moviePosterImageView: UIImageView!
     
     @IBOutlet weak var movieTitleLabel: UILabel!
+    
+    override func prepareForReuse() {
+        moviePosterImageView.sd_cancelCurrentImageLoad()
+    }
+    
+    func showPoster() {
+        moviePosterImageView.sd_setImage(with: model.posterURL, completed: nil)
+    }
 }
