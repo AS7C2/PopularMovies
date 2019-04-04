@@ -21,7 +21,7 @@ class GetPopularMoviesInteractorTests: XCTestCase {
             switch result {
             case .success(let movies):
                 moviesCount = movies.count
-            case .failure(_):
+            case .failure:
                 XCTFail()
             }
         }
@@ -39,11 +39,28 @@ class GetPopularMoviesInteractorTests: XCTestCase {
             switch result {
             case .success(let movies):
                 moviesCount = movies.count
-            case .failure(_):
+            case .failure:
                 XCTFail()
             }
         }
         XCTAssertEqual(repository.count, 2)
         XCTAssertEqual(moviesCount, 2)
+    }
+    
+    func testOnSeriveErrorShouldReturnEntitiesFromRepository() {
+        let repository = MoviesRepositorySpy()
+        repository.add(movies: [MovieStub(), MovieStub(), MovieStub(), MovieStub()]) {result in }
+        let service = GetPopularMoviesServiceErrorDummy()
+        let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
+        var moviesCount: Int?
+        interactor.get { result in
+            switch result {
+            case .success(let movies):
+                moviesCount = movies.count
+            case .failure:
+                XCTFail()
+            }
+        }
+        XCTAssertEqual(moviesCount, 4)
     }
 }

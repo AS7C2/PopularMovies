@@ -36,7 +36,9 @@ class GetPopularMoviesInteractor {
                     }
                 }
             case.failure:
-                break
+                self.repository.getAll { getAllResult in
+                    completionHandler(getAllResult)
+                }
             }
         }
     }

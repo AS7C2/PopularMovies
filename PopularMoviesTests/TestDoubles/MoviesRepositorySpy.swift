@@ -20,6 +20,10 @@ class MoviesRepositorySpy: MoviesRepository {
         completionHandler(.success(()))
     }
     
+    func getAll(completionHandler: @escaping (Result<[Movie], Error>) -> Void) {
+        completionHandler(.success(movies))
+    }
+    
     func clear(completionHandler: @escaping (Result<Void, Error>) -> Void) {
         self.movies.removeAll()
         completionHandler(.success(()))
