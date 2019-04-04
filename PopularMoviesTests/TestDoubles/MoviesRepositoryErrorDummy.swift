@@ -7,6 +7,14 @@
 //
 
 class MoviesRepositoryErrorDummy: MoviesRepository {
+    func update(movie: Movie, completionHandler: @escaping (Result<Void, Error>) -> Void) {
+        completionHandler(.failure(ErrorStub.error))
+    }
+    
+    func get(byId id: Int, completionHandler: @escaping (Result<Movie, Error>) -> Void) {
+        completionHandler(.failure(ErrorStub.error))
+    }
+    
     func add(movies: [Movie], completionHandler: @escaping (Result<Void, Error>) -> Void) {
         completionHandler(.failure(ErrorStub.error))
     }

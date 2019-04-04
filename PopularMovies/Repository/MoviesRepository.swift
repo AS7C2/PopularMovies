@@ -12,4 +12,8 @@ protocol MoviesRepository {
     func getAll(completionHandler: @escaping (Result<[Movie], Error>) -> Void)
     
     func clear(completionHandler: @escaping (Result<Void, Error>) -> Void)
+    
+    func update(movie: Movie, completionHandler: @escaping (Result<Void, Error>) -> Void)
+    
+    func get(byId id: Int, completionHandler: @escaping (Result<Movie, Error>) -> Void)
 }
