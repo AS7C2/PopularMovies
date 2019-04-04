@@ -9,6 +9,8 @@
 import UIKit
 
 class MoviesViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    
     var presenter: MoviesPresenter!
     
     override func viewDidLoad() {
@@ -20,7 +22,7 @@ class MoviesViewController: UIViewController {
 
 extension MoviesViewController: MoviesPresenterDelegate {
     func moviesPresenterDidGetMovies(presenter: MoviesPresenter) {
-        
+        tableView.reloadData()
     }
 }
 
@@ -33,4 +35,8 @@ extension MoviesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MOVIE_CELL") as! MovieCell
         return cell
     }
+}
+
+extension MoviesViewController: UITableViewDelegate {
+    
 }

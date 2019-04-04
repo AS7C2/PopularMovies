@@ -8,6 +8,7 @@ target 'PopularMovies' do
   # Pods for PopularMovies
   pod 'Alamofire'
   pod 'SDWebImage'
+  pod 'SwiftyJSON'
 
   target 'PopularMoviesTests' do
     inherit! :search_paths

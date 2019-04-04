@@ -1,13 +1,13 @@
 //
-//  Movie.swift
+//  MovieDTO.swift
 //  PopularMovies
 //
 //  Created by Andrei Sherstniuk on 4/4/19.
 //  Copyright © 2019 Andrei Sherstniuk. All rights reserved.
 //
 
-protocol Movie {
-    var id: Int { get }
-    var posterPath: String? { get }
-    var title: String? { get }
+struct MovieDTO: Movie {
+    var id: Int
+    var posterPath: String?
+    var title: String?
 }
