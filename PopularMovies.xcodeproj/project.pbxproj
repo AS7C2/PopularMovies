@@ -59,6 +59,7 @@
 		75C839E82256643100317299 /* PosterURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839E72256643100317299 /* PosterURLFactory.swift */; };
 		75C839EA2256648B00317299 /* SmallPosterURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839E92256648B00317299 /* SmallPosterURLFactory.swift */; };
 		75C839EC2256654600317299 /* BigPosterURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839EB2256654600317299 /* BigPosterURLFactory.swift */; };
+		75C839EE2256673D00317299 /* TMDBConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839ED2256673D00317299 /* TMDBConfiguration.swift */; };
 		C85A4386A5A1ECBB065BF49D /* Pods_PopularMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3855770658C787020881EB5A /* Pods_PopularMoviesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		75C839E72256643100317299 /* PosterURLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterURLFactory.swift; sourceTree = "<group>"; };
 		75C839E92256648B00317299 /* SmallPosterURLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPosterURLFactory.swift; sourceTree = "<group>"; };
 		75C839EB2256654600317299 /* BigPosterURLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigPosterURLFactory.swift; sourceTree = "<group>"; };
+		75C839ED2256673D00317299 /* TMDBConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBConfiguration.swift; sourceTree = "<group>"; };
 		A60E816E88F998F842D0C79E /* Pods-PopularMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularMovies.release.xcconfig"; path = "Target Support Files/Pods-PopularMovies/Pods-PopularMovies.release.xcconfig"; sourceTree = "<group>"; };
 		E5A36E88D97B57576EA208AC /* Pods-PopularMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularMoviesTests.debug.xcconfig"; path = "Target Support Files/Pods-PopularMoviesTests/Pods-PopularMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 				75C839882255F44E00317299 /* GetPopularMoviesService.swift */,
 				75C839C122561A8800317299 /* TMDBGetPopularMoviesService.swift */,
 				75C839DA225644CB00317299 /* GetMovieDetailsService.swift */,
+				75C839ED2256673D00317299 /* TMDBConfiguration.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				75C839EA2256648B00317299 /* SmallPosterURLFactory.swift in Sources */,
 				75C839602255E92D00317299 /* AppDelegate.swift in Sources */,
 				75C839B722560B5C00317299 /* DefaultMoviesPresenter.swift in Sources */,
+				75C839EE2256673D00317299 /* TMDBConfiguration.swift in Sources */,
 				75C839CC22562CA200317299 /* MovieDisplayModelFactory.swift in Sources */,
 				75C839DE225651F800317299 /* MoviesRepositoryError.swift in Sources */,
 			);

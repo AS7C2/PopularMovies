@@ -10,9 +10,15 @@ import Alamofire
 import SwiftyJSON
 
 class TMDBGetPopularMoviesService: GetPopularMoviesService {
+    private let configuration: TMDBConfiguration
+    
+    init(configuration: TMDBConfiguration) {
+        self.configuration = configuration
+    }
+    
     func get(completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
         Alamofire
-            .request("https://api.themoviedb.org/3/movie/popular?api_key=c9c241876601ccd0c142c5664fbf3d67")
+            .request("https://api.themoviedb.org/3/movie/popular?api_key=\(configuration.apiKey)")
             .validate()
             .responseData { response in
                 switch response.result {
