@@ -26,4 +26,18 @@ class GetPopularMoviesInteractorTests: XCTestCase {
         XCTAssertEqual(moviesCount, 0)
     }
 
+    func testNotEmptyResult() {
+        let service = GetPopularMoviesServiceDummy()
+        let interactor = GetPopularMoviesInteractor(service: service)
+        var moviesCount: Int?
+        interactor.execute { result in
+            switch result {
+            case .success(let movies):
+                moviesCount = movies.count
+            case .failure(_):
+                XCTFail()
+            }
+        }
+        XCTAssertEqual(moviesCount, 2)
+    }
 }
