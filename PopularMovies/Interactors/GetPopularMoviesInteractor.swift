@@ -16,15 +16,26 @@ class GetPopularMoviesInteractor {
     }
     
     func get(completionHandler: @escaping (Result<[Movie], Error>) -> Void) {
-        return service.get { result in
-            switch result {
+        return service.get { getResult in
+            // TODO: replace nested switch with RxSwift
+            switch getResult {
             case .success(let movies):
-                self.repository.clear()
-                for movie in movies {
-                    self.repository.save(movie: movie)
+                self.repository.clear { clearResult in
+                    switch clearResult {
+                    case .success:
+                        self.repository.add(movies: movies) { saveResult in
+                            switch saveResult {
+                            case .success:
+                                completionHandler(getResult)
+                            case .failure:
+                                break
+                            }
+                        }
+                    case .failure:
+                        break
+                    }
                 }
-                completionHandler(result)
-            case.failure(_):
+            case.failure:
                 break
             }
         }

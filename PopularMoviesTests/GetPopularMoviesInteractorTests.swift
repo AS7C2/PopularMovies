@@ -13,9 +13,7 @@ class GetPopularMoviesInteractorTests: XCTestCase {
 
     func testEmptyResult() {
         let repository = MoviesRepositorySpy()
-        repository.save(movie: MovieStub())
-        repository.save(movie: MovieStub())
-        repository.save(movie: MovieStub())
+        repository.add(movies: [MovieStub(), MovieStub(), MovieStub()]) {result in }
         let service = GetPopularMoviesServiceStub()
         let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         var moviesCount: Int?
@@ -33,7 +31,7 @@ class GetPopularMoviesInteractorTests: XCTestCase {
 
     func testNotEmptyResult() {
         let repository = MoviesRepositorySpy()
-        repository.save(movie: MovieStub())
+        repository.add(movies: [MovieStub()]) {result in }
         let service = GetPopularMoviesServiceDummy()
         let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         var moviesCount: Int?

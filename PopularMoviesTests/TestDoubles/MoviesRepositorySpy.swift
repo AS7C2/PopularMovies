@@ -15,11 +15,13 @@ class MoviesRepositorySpy: MoviesRepository {
         }
     }
     
-    func save(movie: Movie) {
-        movies.append(movie)
+    func add(movies: [Movie], completionHandler: @escaping (Result<Void, Error>) -> Void) {
+        self.movies.append(contentsOf: movies)
+        completionHandler(.success(()))
     }
     
-    func clear() {
-        movies.removeAll()
+    func clear(completionHandler: @escaping (Result<Void, Error>) -> Void) {
+        self.movies.removeAll()
+        completionHandler(.success(()))
     }
 }

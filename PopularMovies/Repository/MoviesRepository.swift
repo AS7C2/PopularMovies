@@ -7,7 +7,7 @@
 //
 
 protocol MoviesRepository {
-    func save(movie: Movie)
+    func add(movies: [Movie], completionHandler: @escaping (Result<Void, Error>) -> Void)
     
-    func clear()
+    func clear(completionHandler: @escaping (Result<Void, Error>) -> Void)
 }
