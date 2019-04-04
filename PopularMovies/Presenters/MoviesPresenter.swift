@@ -20,4 +20,6 @@ protocol MoviesPresenter {
     var numberOfMovies: Int { get }
     
     func movie(atIndex index: Int) -> MovieDisplayModel
+    
+    func selectMovie(atIndex index: Int)
 }

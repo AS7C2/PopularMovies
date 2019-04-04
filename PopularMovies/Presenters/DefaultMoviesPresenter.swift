@@ -64,4 +64,8 @@ class DefaultMoviesPresenter: MoviesPresenter {
     func movie(atIndex index: Int) -> MovieDisplayModel {
         return movieDisplayModelFactory.create(fromMovie: currentMovies[index])
     }
+    
+    func selectMovie(atIndex index: Int) {
+        let movie = currentMovies[index]
+    }
 }

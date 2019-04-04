@@ -44,6 +44,10 @@ extension MoviesViewController: UITableViewDelegate {
         let cell = cell as! MovieCell
         cell.showPoster()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectMovie(atIndex: indexPath.row)
+    }
 }
 
 extension MoviesViewController: UISearchBarDelegate {
