@@ -9,6 +9,12 @@
 import Foundation
 
 class DefaultMovieDisplayModelFactory: MovieDisplayModelFactory {
+    let posterURLFactory: PosterURLFactory
+    
+    init(posterURLFactory: PosterURLFactory) {
+        self.posterURLFactory = posterURLFactory
+    }
+    
     func create(fromMovie movie: Movie) -> MovieDisplayModel {
         return MovieDisplayModel(posterURL: getPosterURL(posterPath: movie.posterPath), title: movie.title)
     }
@@ -17,6 +23,6 @@ class DefaultMovieDisplayModelFactory: MovieDisplayModelFactory {
         guard let posterPath = posterPath else {
             return nil
         }
-        return URL(string: "https://image.tmdb.org/t/p/w300\(posterPath)")
+        return posterURLFactory.create(posterPath: posterPath)
     }
 }
