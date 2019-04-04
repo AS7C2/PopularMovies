@@ -15,6 +15,8 @@ protocol MoviesPresenter {
     
     func getMovies()
     
+    func searchMovies(searchText: String)
+    
     var numberOfMovies: Int { get }
     
     func movie(atIndex index: Int) -> MovieDisplayModel

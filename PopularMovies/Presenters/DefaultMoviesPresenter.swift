@@ -11,7 +11,8 @@ class DefaultMoviesPresenter: MoviesPresenter {
     
     private let getMoviesInteractor: GetMoviesInteractor
     private let movieDisplayModelFactory: MovieDisplayModelFactory
-    private var movies: [Movie] = []
+    private var originalMovies: [Movie] = []
+    private var currentMovies: [Movie] = []
     
     init(getMoviesInteractor: GetMoviesInteractor, movieDisplayModelFactory: MovieDisplayModelFactory) {
         self.getMoviesInteractor = getMoviesInteractor
@@ -22,8 +23,10 @@ class DefaultMoviesPresenter: MoviesPresenter {
         getMoviesInteractor.get() { result in
             switch result {
             case .success(let movies):
-                self.movies.removeAll()
-                self.movies.append(contentsOf: movies)
+                self.originalMovies.removeAll()
+                self.currentMovies.removeAll()
+                self.originalMovies.append(contentsOf: movies)
+                self.currentMovies.append(contentsOf: movies)
                 if let delegate = self.delegate {
                     delegate.moviesPresenterDidGetMovies(presenter: self)
                 }
@@ -33,13 +36,32 @@ class DefaultMoviesPresenter: MoviesPresenter {
         }
     }
     
+    func searchMovies(searchText: String) {
+        self.currentMovies.removeAll()
+        if (searchText.isEmpty) {
+            self.currentMovies.append(contentsOf: originalMovies)
+        } else {
+            let searchedMovies = self.originalMovies.filter { movie in
+                if let title = movie.title {
+                    return title.lowercased().contains(searchText.lowercased())
+                } else {
+                    return false
+                }
+            }
+            self.currentMovies.append(contentsOf: searchedMovies)
+        }
+        if let delegate = self.delegate {
+            delegate.moviesPresenterDidGetMovies(presenter: self)
+        }
+    }
+    
     var numberOfMovies: Int {
         get {
-            return movies.count
+            return currentMovies.count
         }
     }
     
     func movie(atIndex index: Int) -> MovieDisplayModel {
-        return movieDisplayModelFactory.create(fromMovie: movies[index])
+        return movieDisplayModelFactory.create(fromMovie: currentMovies[index])
     }
 }
