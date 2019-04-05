@@ -25,6 +25,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var movieGenresLabel: UILabel!
     @IBOutlet weak var movieDateLabel: UILabel!
     @IBOutlet weak var movieOverviewLabel: UILabel!
+    @IBOutlet weak var watchTrailerButton: UIButton!
     
     @IBAction func onWatchTrailerClicked(_ sender: UIButton) {
         presenter.watchTrailer()
@@ -40,5 +41,9 @@ class MovieDetailsViewController: UIViewController {
 extension MovieDetailsViewController: MovieDetailsPresenterViewDelegate {
     func movieDetailsPresenter(presenter: MovieDetailsPresenter, didGetMovieDetails movie: MovieDisplayModel) {
         self.movie = movie
+    }
+    
+    func movieDetailsPresenter(presenter: MovieDetailsPresenter, isAbleToWatchTrailer: Bool) {
+        watchTrailerButton.isEnabled = isAbleToWatchTrailer
     }
 }

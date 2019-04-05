@@ -9,6 +9,7 @@
 import Foundation
 
 class MovieStub: Movie {
+    var youTubeKey: String?
     var genres: [String]?
     var releaseDate: Date?
     var overview: String?

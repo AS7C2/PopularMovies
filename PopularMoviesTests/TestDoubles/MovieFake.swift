@@ -9,6 +9,7 @@
 import Foundation
 
 class MovieFake: Movie {
+    var youTubeKey: String?
     var genres: [String]?
     var releaseDate: Date?
     var overview: String?

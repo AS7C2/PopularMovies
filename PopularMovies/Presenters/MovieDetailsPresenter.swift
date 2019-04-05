@@ -8,6 +8,8 @@
 
 protocol MovieDetailsPresenterViewDelegate: class {
     func movieDetailsPresenter(presenter: MovieDetailsPresenter, didGetMovieDetails movie: MovieDisplayModel)
+    
+    func movieDetailsPresenter(presenter: MovieDetailsPresenter, isAbleToWatchTrailer: Bool)
 }
 
 protocol MovieDetailsPresenterCoordinatorDelegate: class {

@@ -15,4 +15,5 @@ protocol Movie {
     var releaseDate: Date? { get }
     var overview: String? { get }
     var genres: [String]? { get }
+    var youTubeKey: String? { get }
 }

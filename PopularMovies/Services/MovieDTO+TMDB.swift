@@ -17,7 +17,8 @@ extension MovieDTO {
                 title: json["title"].string,
                 releaseDate: parseDate(string: json["release_date"].string),
                 overview: json["overview"].string,
-                genres: getGenres(json: json))
+                genres: getGenres(json: json),
+                youTubeKey: nil)
         } else {
             return nil
         }

@@ -232,6 +232,7 @@
                         <outlet property="movieOverviewLabel" destination="Dt1-nI-zGG" id="OHf-8a-nPU"/>
                         <outlet property="moviePosterImageView" destination="C2o-Eq-4CT" id="byN-Yj-qdo"/>
                         <outlet property="movieTitleLabel" destination="2H9-oK-2e8" id="jZx-9R-cFB"/>
+                        <outlet property="watchTrailerButton" destination="Bkk-ob-5PA" id="BTd-14-a4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIl-FJ-ZdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

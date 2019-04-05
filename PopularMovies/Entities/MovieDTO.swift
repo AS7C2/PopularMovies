@@ -15,4 +15,5 @@ struct MovieDTO: Movie {
     var releaseDate: Date?
     var overview: String?
     var genres: [String]?
+    var youTubeKey: String?
 }

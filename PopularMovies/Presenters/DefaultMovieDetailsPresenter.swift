@@ -39,6 +39,9 @@ class DefaultMovieDetailsPresenter: MovieDetailsPresenter {
             viewDelegate.movieDetailsPresenter(
                 presenter: self,
                 didGetMovieDetails: self.movieDisplayModelFactory.create(fromMovie: movie))
+            viewDelegate.movieDetailsPresenter(
+                presenter: self,
+                isAbleToWatchTrailer: movie.youTubeKey != nil)
         }
     }
     
