@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import WebKit
 
 class MovieTrailerViewController: UIViewController {
     var presenter: MovieTrailerPresenter!
+    var webView: WKWebView!
+    
+    override func loadView() {
+        let contentController = WKUserContentController()
+        contentController.add(self, name: "callbackHandler")
+        let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.allowsInlineMediaPlayback = true
+        webConfiguration.userContentController = contentController
+        webConfiguration.mediaTypesRequiringUserActionForPlayback = []
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.scrollView.isScrollEnabled = false
+        view = webView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.black
         
         presenter.getYouTubeKey()
         
@@ -31,6 +43,19 @@ class MovieTrailerViewController: UIViewController {
 
 extension MovieTrailerViewController: MovieTrailerPresenterViewDelegate {
     func movieTrailerPresenter(presenter: MovieTrailerPresenter, didGetYouTubeKey youTubeKey: String) {
-        
+        playTrailer(youTubeKey: youTubeKey)
+    }
+    
+    func playTrailer(youTubeKey: String) {
+        let filePath = Bundle.main.path(forResource: "YouTubePlayer", ofType: "html")!
+        let template = try! String(contentsOfFile: filePath)
+        let contents = String(format: template, youTubeKey)
+        webView.loadHTMLString(contents, baseURL: nil)
+    }
+}
+
+extension MovieTrailerViewController: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        presenter.closeTrailer()
     }
 }

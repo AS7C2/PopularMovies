@@ -71,6 +71,7 @@
 		75C83A0022573CC100317299 /* MovieTrailerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839FF22573CC100317299 /* MovieTrailerCoordinator.swift */; };
 		75C83A0222574AC300317299 /* MovieTrailerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C83A0122574AC300317299 /* MovieTrailerPresenter.swift */; };
 		75C83A0422574BEF00317299 /* DefaultMovieTrailerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C83A0322574BEF00317299 /* DefaultMovieTrailerPresenter.swift */; };
+		75C83A062257545000317299 /* YouTubePlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 75C83A052257545000317299 /* YouTubePlayer.html */; };
 		C85A4386A5A1ECBB065BF49D /* Pods_PopularMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3855770658C787020881EB5A /* Pods_PopularMoviesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 		75C839FF22573CC100317299 /* MovieTrailerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerCoordinator.swift; sourceTree = "<group>"; };
 		75C83A0122574AC300317299 /* MovieTrailerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerPresenter.swift; sourceTree = "<group>"; };
 		75C83A0322574BEF00317299 /* DefaultMovieTrailerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMovieTrailerPresenter.swift; sourceTree = "<group>"; };
+		75C83A052257545000317299 /* YouTubePlayer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = YouTubePlayer.html; sourceTree = "<group>"; };
 		A60E816E88F998F842D0C79E /* Pods-PopularMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularMovies.release.xcconfig"; path = "Target Support Files/Pods-PopularMovies/Pods-PopularMovies.release.xcconfig"; sourceTree = "<group>"; };
 		E5A36E88D97B57576EA208AC /* Pods-PopularMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularMoviesTests.debug.xcconfig"; path = "Target Support Files/Pods-PopularMoviesTests/Pods-PopularMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -292,6 +294,7 @@
 				75C839EB2256654600317299 /* BigPosterURLFactory.swift */,
 				75C839F522566D4800317299 /* MovieDetailsViewController.swift */,
 				75C839FD22573C7A00317299 /* MovieTrailerViewController.swift */,
+				75C83A052257545000317299 /* YouTubePlayer.html */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				75C8396A2255E92E00317299 /* LaunchScreen.storyboard in Resources */,
 				75C839672255E92E00317299 /* Assets.xcassets in Resources */,
 				75C839652255E92D00317299 /* Main.storyboard in Resources */,
+				75C83A062257545000317299 /* YouTubePlayer.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
