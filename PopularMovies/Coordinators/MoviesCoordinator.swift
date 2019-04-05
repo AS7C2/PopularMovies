@@ -21,7 +21,7 @@ class MoviesCoordinator {
     
     func start() {
         let service = TMDBGetPopularMoviesService(configuration: TMDBConfiguration())
-        repository = InMemoryMoviesRepository()
+        repository = CoreDataMoviesRepository()
         let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         let movieDisplayModelFactory = DefaultMovieDisplayModelFactory(posterURLFactory: SmallPosterURLFactory())
         let presenter = DefaultMoviesPresenter(getMoviesInteractor: interactor, movieDisplayModelFactory: movieDisplayModelFactory)
