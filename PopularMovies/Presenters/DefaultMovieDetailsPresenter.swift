@@ -47,7 +47,7 @@ class DefaultMovieDetailsPresenter: MovieDetailsPresenter {
     
     func watchTrailer() {
         if let coordinatorDelegate = coordinatorDelegate {
-            coordinatorDelegate.movieDetailsPresenterDidSelectWatchTrailer(presenter: self)
+            coordinatorDelegate.movieDetailsPresenterDidSelectWatchTrailer(presenter: self, withYouTubeKey: self.movie.youTubeKey!)
         }
     }
 }

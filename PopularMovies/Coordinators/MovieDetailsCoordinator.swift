@@ -41,9 +41,9 @@ class MovieDetailsCoordinator {
 }
 
 extension MovieDetailsCoordinator: MovieDetailsPresenterCoordinatorDelegate {
-    func movieDetailsPresenterDidSelectWatchTrailer(presenter: MovieDetailsPresenter) {
+    func movieDetailsPresenterDidSelectWatchTrailer(presenter: MovieDetailsPresenter, withYouTubeKey youTubeKey: String) {
         movieTrailerCoordinator = MovieTrailerCoordinator(
-            movie: movie,
+            youTubeKey: youTubeKey,
             repository: repository,
             navigationController: navigationController)
         movieTrailerCoordinator?.start()

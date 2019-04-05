@@ -9,9 +9,19 @@
 import UIKit
 
 class MovieTrailerViewController: UIViewController {
+    var presenter: MovieTrailerPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.black
+        
+        presenter.getYouTubeKey()
+    }
+}
+
+extension MovieTrailerViewController: MovieTrailerPresenterViewDelegate {
+    func movieTrailerPresenter(presenter: MovieTrailerPresenter, didGetYouTubeKey youTubeKey: String) {
+        
     }
 }

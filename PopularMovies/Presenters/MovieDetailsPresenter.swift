@@ -13,7 +13,7 @@ protocol MovieDetailsPresenterViewDelegate: class {
 }
 
 protocol MovieDetailsPresenterCoordinatorDelegate: class {
-    func movieDetailsPresenterDidSelectWatchTrailer(presenter: MovieDetailsPresenter)
+    func movieDetailsPresenterDidSelectWatchTrailer(presenter: MovieDetailsPresenter, withYouTubeKey youTubeKey: String)
 }
 
 protocol MovieDetailsPresenter {
