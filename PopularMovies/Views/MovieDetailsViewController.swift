@@ -27,6 +27,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var movieOverviewLabel: UILabel!
     
     @IBAction func onWatchTrailerClicked(_ sender: UIButton) {
+        presenter.watchTrailer()
     }
     
     override func viewDidLoad() {
