@@ -40,7 +40,6 @@
 		75C839BE22560C8000317299 /* MoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839BD22560C8000317299 /* MoviesPresenter.swift */; };
 		75C839C02256131300317299 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839BF2256131300317299 /* MovieCell.swift */; };
 		75C839C222561A8800317299 /* TMDBGetPopularMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839C122561A8800317299 /* TMDBGetPopularMoviesService.swift */; };
-		75C839C422561B0300317299 /* InMemoryMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839C322561B0300317299 /* InMemoryMoviesRepository.swift */; };
 		75C839C62256240400317299 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839C52256240400317299 /* MovieDTO.swift */; };
 		75C839CA22562B6800317299 /* MovieDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839C922562B6800317299 /* MovieDisplayModel.swift */; };
 		75C839CC22562CA200317299 /* MovieDisplayModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839CB22562CA200317299 /* MovieDisplayModelFactory.swift */; };
@@ -53,8 +52,6 @@
 		75C839D9225644A300317299 /* GetMovieDetailsServiceFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839D7225644A300317299 /* GetMovieDetailsServiceFake.swift */; };
 		75C839DB225644CB00317299 /* GetMovieDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839DA225644CB00317299 /* GetMovieDetailsService.swift */; };
 		75C839DC225644CB00317299 /* GetMovieDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839DA225644CB00317299 /* GetMovieDetailsService.swift */; };
-		75C839DE225651F800317299 /* MoviesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839DD225651F800317299 /* MoviesRepositoryError.swift */; };
-		75C839DF225651F800317299 /* MoviesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839DD225651F800317299 /* MoviesRepositoryError.swift */; };
 		75C839E42256577D00317299 /* MovieFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839E32256577D00317299 /* MovieFake.swift */; };
 		75C839E622565A1700317299 /* GetMovieDetailsServiceErrorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839E522565A1700317299 /* GetMovieDetailsServiceErrorDummy.swift */; };
 		75C839E82256643100317299 /* PosterURLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839E72256643100317299 /* PosterURLFactory.swift */; };
@@ -121,7 +118,6 @@
 		75C839BD22560C8000317299 /* MoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPresenter.swift; sourceTree = "<group>"; };
 		75C839BF2256131300317299 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		75C839C122561A8800317299 /* TMDBGetPopularMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBGetPopularMoviesService.swift; sourceTree = "<group>"; };
-		75C839C322561B0300317299 /* InMemoryMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryMoviesRepository.swift; sourceTree = "<group>"; };
 		75C839C52256240400317299 /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
 		75C839C922562B6800317299 /* MovieDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDisplayModel.swift; sourceTree = "<group>"; };
 		75C839CB22562CA200317299 /* MovieDisplayModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDisplayModelFactory.swift; sourceTree = "<group>"; };
@@ -131,7 +127,6 @@
 		75C839D42256428E00317299 /* DefaultGetMovieDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGetMovieDetailsInteractor.swift; sourceTree = "<group>"; };
 		75C839D7225644A300317299 /* GetMovieDetailsServiceFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsServiceFake.swift; sourceTree = "<group>"; };
 		75C839DA225644CB00317299 /* GetMovieDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsService.swift; sourceTree = "<group>"; };
-		75C839DD225651F800317299 /* MoviesRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryError.swift; sourceTree = "<group>"; };
 		75C839E32256577D00317299 /* MovieFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFake.swift; sourceTree = "<group>"; };
 		75C839E522565A1700317299 /* GetMovieDetailsServiceErrorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsServiceErrorDummy.swift; sourceTree = "<group>"; };
 		75C839E72256643100317299 /* PosterURLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterURLFactory.swift; sourceTree = "<group>"; };
@@ -280,8 +275,6 @@
 			children = (
 				75C83A112257703A00317299 /* CoreData */,
 				75C839992255F7D400317299 /* MoviesRepository.swift */,
-				75C839C322561B0300317299 /* InMemoryMoviesRepository.swift */,
-				75C839DD225651F800317299 /* MoviesRepositoryError.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -568,7 +561,6 @@
 				75C839A62256076F00317299 /* MoviesRepositoryErrorDummy.swift in Sources */,
 				75C839F422566B9200317299 /* MovieDetailsCoordinator.swift in Sources */,
 				75C839E82256643100317299 /* PosterURLFactory.swift in Sources */,
-				75C839C422561B0300317299 /* InMemoryMoviesRepository.swift in Sources */,
 				75C839B922560B7000317299 /* MoviesCoordinator.swift in Sources */,
 				757E477D2257748B0002B3C3 /* CDMovie.swift in Sources */,
 				75C839EA2256648B00317299 /* SmallPosterURLFactory.swift in Sources */,
@@ -578,7 +570,6 @@
 				75C83A162257706D00317299 /* CoreDataMoviesRepository.swift in Sources */,
 				75C839EE2256673D00317299 /* TMDBConfiguration.swift in Sources */,
 				75C839CC22562CA200317299 /* MovieDisplayModelFactory.swift in Sources */,
-				75C839DE225651F800317299 /* MoviesRepositoryError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +579,6 @@
 			files = (
 				75C839DC225644CB00317299 /* GetMovieDetailsService.swift in Sources */,
 				75C839D32256425300317299 /* GetMovieDetailsInteractor.swift in Sources */,
-				75C839DF225651F800317299 /* MoviesRepositoryError.swift in Sources */,
 				75C839822255ED5C00317299 /* GetPopularMoviesInteractor.swift in Sources */,
 				75C839E622565A1700317299 /* GetMovieDetailsServiceErrorDummy.swift in Sources */,
 				75C839972255F70600317299 /* MovieStub.swift in Sources */,
