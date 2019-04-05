@@ -6,7 +6,13 @@
 //  Copyright © 2019 Andrei Sherstniuk. All rights reserved.
 //
 
+import Foundation
+
 class MovieStub: Movie {
+    var releaseDate: Date?
+    
+    var overview: String?
+    
     var id: Int = 0
     
     var posterPath: String?

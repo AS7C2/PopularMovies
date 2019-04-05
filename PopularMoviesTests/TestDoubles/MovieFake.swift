@@ -6,7 +6,13 @@
 //  Copyright © 2019 Andrei Sherstniuk. All rights reserved.
 //
 
+import Foundation
+
 class MovieFake: Movie {
+    var releaseDate: Date?
+    
+    var overview: String?
+    
     var id: Int
     
     var posterPath: String?
