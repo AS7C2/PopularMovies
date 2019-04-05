@@ -10,6 +10,7 @@ import UIKit
 
 class MoviesCoordinator {
     private let window: UIWindow
+    private var navigationController: UINavigationController?
     
     init(window: UIWindow) {
         self.window = window
@@ -28,13 +29,14 @@ class MoviesCoordinator {
         presenter.viewDelegate = viewController
         presenter.coordinatorDelegate = self
         
-        let navigationController =  UINavigationController(rootViewController: viewController)
+        navigationController =  UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
     }
 }
 
 extension MoviesCoordinator: MoviesPresenterCoordinatorDelegate {
     func moviesPresenter(presenter: MoviesPresenter, didSelectMovie movie: Movie) {
-        print(movie.id)
+        let movieDetailsCoordinator = MovieDetailsCoordinator(movie: movie, navigationController: navigationController!)
+        movieDetailsCoordinator.start()
     }
 }

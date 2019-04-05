@@ -6,8 +6,12 @@
 //  Copyright © 2019 Andrei Sherstniuk. All rights reserved.
 //
 
+import Foundation
+
 protocol Movie {
     var id: Int { get }
     var posterPath: String? { get }
     var title: String? { get }
+    var releaseDate: Date? { get }
+    var overview: String? { get }
 }

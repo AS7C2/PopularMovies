@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Details View Controller-->
         <scene sceneID="zSc-1w-oEq">
             <objects>
-                <viewController storyboardIdentifier="MOVIE_DETAILS" id="Ku0-qS-7Og" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MOVIE_DETAILS" id="Ku0-qS-7Og" customClass="MovieDetailsViewController" customModule="PopularMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TiI-CR-abK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,6 +125,9 @@
                                                         <rect key="frame" x="150.66666666666666" y="54.666666666666686" width="112.99999999999997" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Watch Trailer"/>
+                                                        <connections>
+                                                            <action selector="onWatchTrailerClicked:" destination="Ku0-qS-7Og" eventType="touchUpInside" id="AP4-4L-vwT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,6 +224,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EM3-Pw-KvV"/>
                     </view>
+                    <connections>
+                        <outlet property="genresLabel" destination="djQ-OL-3k3" id="YNZ-gJ-Scd"/>
+                        <outlet property="movieDateLabel" destination="V5H-vh-F8H" id="9dh-4U-Fvc"/>
+                        <outlet property="movieGenresLabel" destination="djQ-OL-3k3" id="gmy-2B-6t4"/>
+                        <outlet property="movieOverviewLabel" destination="Dt1-nI-zGG" id="OHf-8a-nPU"/>
+                        <outlet property="moviePosterImageView" destination="C2o-Eq-4CT" id="byN-Yj-qdo"/>
+                        <outlet property="movieTitleLabel" destination="2H9-oK-2e8" id="jZx-9R-cFB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIl-FJ-ZdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

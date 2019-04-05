@@ -1,5 +1,5 @@
 //
-//  TMDBGetPopularMoviesService.swift
+//  TMDBGetMovieDetailsService.swift
 //  PopularMovies
 //
 //  Created by Andrei Sherstniuk on 4/4/19.
@@ -9,16 +9,16 @@
 import Alamofire
 import SwiftyJSON
 
-class TMDBGetPopularMoviesService: GetPopularMoviesService {
+class TMDBGetMovieDetailsService: GetMovieDetailsService {
     private let configuration: TMDBConfiguration
     
     init(configuration: TMDBConfiguration) {
         self.configuration = configuration
     }
     
-    func get(completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
+    func get(byId id: Int, completionHandler: @escaping (Swift.Result<Movie, Error>) -> Void) {
         Alamofire
-            .request("https://api.themoviedb.org/3/movie/popular?api_key=\(configuration.apiKey)")
+            .request("https://api.themoviedb.org/3/movie/\(id)?api_key=\(configuration.apiKey)")
             .validate()
             .responseData { response in
                 switch response.result {
@@ -26,15 +26,8 @@ class TMDBGetPopularMoviesService: GetPopularMoviesService {
                     if let data = response.result.value {
                         do {
                             let json = try JSON(data: data)
-                            let results = json["results"]
-                            if let results = results.array {
-                                var movies: [Movie] = []
-                                for result in results {
-                                    if let movie = MovieDTO.fromTMDBJSON(json: result) {
-                                        movies.append(movie)
-                                    }
-                                }
-                                completionHandler(.success(movies))
+                            if let movie = MovieDTO.fromTMDBJSON(json: json) {
+                                completionHandler(.success(movie))
                             } else {
                                 completionHandler(.failure(TMDBServiceError.unexpectedData))
                             }
@@ -48,6 +41,6 @@ class TMDBGetPopularMoviesService: GetPopularMoviesService {
                 case .failure(let error):
                     completionHandler(.failure(error))
                 }
-            }
+        }
     }
 }
