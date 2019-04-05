@@ -115,7 +115,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ag-cn-iRY">
                                                 <rect key="frame" x="0.0" y="310" width="414" height="99"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-oK-2e8">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="2H9-oK-2e8">
                                                         <rect key="frame" x="8" y="8" width="398" height="24"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -134,6 +134,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="2H9-oK-2e8" secondAttribute="trailing" constant="8" id="52H-N6-rAX"/>
                                                     <constraint firstItem="2H9-oK-2e8" firstAttribute="top" secondItem="1Ag-cn-iRY" secondAttribute="top" constant="8" id="9LE-6m-dt1"/>
+                                                    <constraint firstItem="Bkk-ob-5PA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2H9-oK-2e8" secondAttribute="bottom" constant="2" id="Kbb-ZH-59S"/>
                                                     <constraint firstAttribute="bottom" secondItem="Bkk-ob-5PA" secondAttribute="bottom" constant="8.5" id="Qh7-NG-Yzr"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="99" id="fQY-yu-i94"/>
                                                     <constraint firstItem="Bkk-ob-5PA" firstAttribute="centerX" secondItem="1Ag-cn-iRY" secondAttribute="centerX" id="fnJ-I7-uLy"/>
