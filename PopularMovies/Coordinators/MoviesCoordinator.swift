@@ -31,6 +31,7 @@ class MoviesCoordinator {
         viewController.presenter = presenter
         presenter.viewDelegate = viewController
         presenter.coordinatorDelegate = self
+        viewController.title = "Movie Catalog"
         
         navigationController =  UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController

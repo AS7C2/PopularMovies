@@ -31,6 +31,7 @@ class MovieDetailsCoordinator {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MOVIE_DETAILS") as! MovieDetailsViewController
         viewController.presenter = presenter
+        viewController.title = "Movie Detail"
         presenter.viewDelegate = viewController
         presenter.coordinatorDelegate = self
         navigationController.pushViewController(viewController, animated: true)
