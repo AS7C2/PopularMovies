@@ -67,6 +67,8 @@
 		75C839F822566E7300317299 /* TMDBGetMovieDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839F722566E7300317299 /* TMDBGetMovieDetailsService.swift */; };
 		75C839FA2256719800317299 /* TMDBServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839F92256719800317299 /* TMDBServiceError.swift */; };
 		75C839FC2256732F00317299 /* MovieDTO+TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839FB2256732F00317299 /* MovieDTO+TMDB.swift */; };
+		75C839FE22573C7A00317299 /* MovieTrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839FD22573C7A00317299 /* MovieTrailerViewController.swift */; };
+		75C83A0022573CC100317299 /* MovieTrailerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C839FF22573CC100317299 /* MovieTrailerCoordinator.swift */; };
 		C85A4386A5A1ECBB065BF49D /* Pods_PopularMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3855770658C787020881EB5A /* Pods_PopularMoviesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,8 @@
 		75C839F722566E7300317299 /* TMDBGetMovieDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBGetMovieDetailsService.swift; sourceTree = "<group>"; };
 		75C839F92256719800317299 /* TMDBServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBServiceError.swift; sourceTree = "<group>"; };
 		75C839FB2256732F00317299 /* MovieDTO+TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDTO+TMDB.swift"; sourceTree = "<group>"; };
+		75C839FD22573C7A00317299 /* MovieTrailerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerViewController.swift; sourceTree = "<group>"; };
+		75C839FF22573CC100317299 /* MovieTrailerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerCoordinator.swift; sourceTree = "<group>"; };
 		A60E816E88F998F842D0C79E /* Pods-PopularMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularMovies.release.xcconfig"; path = "Target Support Files/Pods-PopularMovies/Pods-PopularMovies.release.xcconfig"; sourceTree = "<group>"; };
 		E5A36E88D97B57576EA208AC /* Pods-PopularMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopularMoviesTests.debug.xcconfig"; path = "Target Support Files/Pods-PopularMoviesTests/Pods-PopularMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -283,6 +287,7 @@
 				75C839E92256648B00317299 /* SmallPosterURLFactory.swift */,
 				75C839EB2256654600317299 /* BigPosterURLFactory.swift */,
 				75C839F522566D4800317299 /* MovieDetailsViewController.swift */,
+				75C839FD22573C7A00317299 /* MovieTrailerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			children = (
 				75C839B822560B7000317299 /* MoviesCoordinator.swift */,
 				75C839F322566B9200317299 /* MovieDetailsCoordinator.swift */,
+				75C839FF22573CC100317299 /* MovieTrailerCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 				75C839B522560B1F00317299 /* MoviesViewController.swift in Sources */,
 				75C839D52256428E00317299 /* DefaultGetMovieDetailsInteractor.swift in Sources */,
 				75C839A3225604B700317299 /* ErrorStub.swift in Sources */,
+				75C83A0022573CC100317299 /* MovieTrailerCoordinator.swift in Sources */,
 				75C839C222561A8800317299 /* TMDBGetPopularMoviesService.swift in Sources */,
 				75C839DB225644CB00317299 /* GetMovieDetailsService.swift in Sources */,
 				75C839892255F44E00317299 /* GetPopularMoviesService.swift in Sources */,
@@ -522,6 +529,7 @@
 				75C839CE22562CD900317299 /* DefaultMovieDisplayModelFactory.swift in Sources */,
 				75C839BE22560C8000317299 /* MoviesPresenter.swift in Sources */,
 				75C839C02256131300317299 /* MovieCell.swift in Sources */,
+				75C839FE22573C7A00317299 /* MovieTrailerViewController.swift in Sources */,
 				75C839F822566E7300317299 /* TMDBGetMovieDetailsService.swift in Sources */,
 				75C839812255ED5C00317299 /* GetPopularMoviesInteractor.swift in Sources */,
 				75C839852255EEA000317299 /* Movie.swift in Sources */,

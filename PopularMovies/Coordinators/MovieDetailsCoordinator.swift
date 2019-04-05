@@ -13,6 +13,8 @@ class MovieDetailsCoordinator {
     private let navigationController: UINavigationController
     private let repository: MoviesRepository
     
+    private var movieTrailerCoordinator: MovieTrailerCoordinator?
+    
     init(movie: Movie, repository: MoviesRepository, navigationController: UINavigationController) {
         self.movie = movie
         self.repository = repository
@@ -40,6 +42,10 @@ class MovieDetailsCoordinator {
 
 extension MovieDetailsCoordinator: MovieDetailsPresenterCoordinatorDelegate {
     func movieDetailsPresenterDidSelectWatchTrailer(presenter: MovieDetailsPresenter) {
-        print("watch trailer")
+        movieTrailerCoordinator = MovieTrailerCoordinator(
+            movie: movie,
+            repository: repository,
+            navigationController: navigationController)
+        movieTrailerCoordinator?.start()
     }
 }
