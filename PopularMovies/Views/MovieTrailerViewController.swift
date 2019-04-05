@@ -17,6 +17,15 @@ class MovieTrailerViewController: UIViewController {
         self.view.backgroundColor = UIColor.black
         
         presenter.getYouTubeKey()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(done))
+    }
+    
+    @objc func done() {
+        presenter.closeTrailer()
     }
 }
 
