@@ -19,4 +19,32 @@ class DefaultMovieDetailsPresenter: MovieDetailsPresenter {
         self.getMovieDetailsInteractor = getMovieDetailsInteractor
         self.movieDisplayModelFactory = movieDisplayModelFactory
     }
+    
+    func getMovieDetails() {
+        notifyDidGetMovieDetails(movie: movie)
+        getMovieDetailsInteractor.get(byId: movie.id) { result in
+            switch (result) {
+            case .success(let movie):
+                self.movie = movie
+                self.notifyDidGetMovieDetails(movie: movie)
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    private func notifyDidGetMovieDetails(movie: Movie) {
+        if let viewDelegate = self.viewDelegate {
+            viewDelegate.movieDetailsPresenter(
+                presenter: self,
+                didGetMovieDetails: self.movieDisplayModelFactory.create(fromMovie: movie))
+        }
+    }
+    
+    func watchTrailer() {
+        if let coordinatorDelegate = coordinatorDelegate {
+            coordinatorDelegate.movieDetailsPresenterDidSelectWatchTrailer(presenter: self)
+        }
+    }
 }

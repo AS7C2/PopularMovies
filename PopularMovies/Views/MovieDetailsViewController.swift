@@ -14,7 +14,9 @@ class MovieDetailsViewController: UIViewController {
         didSet {
             moviePosterImageView.sd_setImage(with: movie.posterURL, completed: nil)
             movieTitleLabel.text = movie.title
-            // TODO: add other fields
+            movieGenresLabel.text = movie.genres
+            movieDateLabel.text = movie.releaseDate
+            movieOverviewLabel.text = movie.overview
         }
     }
     
@@ -25,6 +27,12 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var movieOverviewLabel: UILabel!
     
     @IBAction func onWatchTrailerClicked(_ sender: UIButton) {
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter.getMovieDetails()
     }
 }
 

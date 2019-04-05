@@ -17,5 +17,9 @@ protocol MovieDetailsPresenterCoordinatorDelegate: class {
 protocol MovieDetailsPresenter {
     var viewDelegate: MovieDetailsPresenterViewDelegate? { get set }
     var coordinatorDelegate: MovieDetailsPresenterCoordinatorDelegate? { get set }
+    
+    func getMovieDetails()
+    
+    func watchTrailer()
 }
 

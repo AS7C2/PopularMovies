@@ -10,7 +10,10 @@ import UIKit
 
 class MoviesCoordinator {
     private let window: UIWindow
-    private var navigationController: UINavigationController?
+    private var navigationController: UINavigationController!
+    private var repository: MoviesRepository!
+    
+    private var movieDetailsCoordinator: MovieDetailsCoordinator!
     
     init(window: UIWindow) {
         self.window = window
@@ -18,7 +21,7 @@ class MoviesCoordinator {
     
     func start() {
         let service = TMDBGetPopularMoviesService(configuration: TMDBConfiguration())
-        let repository = InMemoryMoviesRepository()
+        repository = InMemoryMoviesRepository()
         let interactor = GetPopularMoviesInteractor(service: service, repository: repository)
         let movieDisplayModelFactory = DefaultMovieDisplayModelFactory(posterURLFactory: SmallPosterURLFactory())
         let presenter = DefaultMoviesPresenter(getMoviesInteractor: interactor, movieDisplayModelFactory: movieDisplayModelFactory)
@@ -36,7 +39,10 @@ class MoviesCoordinator {
 
 extension MoviesCoordinator: MoviesPresenterCoordinatorDelegate {
     func moviesPresenter(presenter: MoviesPresenter, didSelectMovie movie: Movie) {
-        let movieDetailsCoordinator = MovieDetailsCoordinator(movie: movie, navigationController: navigationController!)
+        movieDetailsCoordinator = MovieDetailsCoordinator(
+            movie: movie,
+            repository: repository,
+            navigationController: navigationController)
         movieDetailsCoordinator.start()
     }
 }
