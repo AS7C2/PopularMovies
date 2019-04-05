@@ -9,16 +9,13 @@
 import Foundation
 
 class MovieFake: Movie {
+    var genres: [String]?
     var releaseDate: Date?
-    
     var overview: String?
-    
     var id: Int
-    
     var posterPath: String?
-    
     var title: String?
-    
+
     init(id: Int) {
         self.id = id
     }

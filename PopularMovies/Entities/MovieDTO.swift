@@ -14,4 +14,5 @@ struct MovieDTO: Movie {
     var title: String?
     var releaseDate: Date?
     var overview: String?
+    var genres: [String]?
 }

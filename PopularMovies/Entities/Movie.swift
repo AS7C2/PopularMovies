@@ -14,4 +14,5 @@ protocol Movie {
     var title: String? { get }
     var releaseDate: Date? { get }
     var overview: String? { get }
+    var genres: [String]? { get }
 }

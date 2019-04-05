@@ -16,7 +16,12 @@ class DefaultMovieDisplayModelFactory: MovieDisplayModelFactory {
     }
     
     func create(fromMovie movie: Movie) -> MovieDisplayModel {
-        return MovieDisplayModel(posterURL: getPosterURL(posterPath: movie.posterPath), title: movie.title)
+        return MovieDisplayModel(
+            posterURL: getPosterURL(posterPath: movie.posterPath),
+            title: movie.title,
+            releaseDate: getDateString(date: movie.releaseDate),
+            overview: movie.overview,
+            genres: getGenresString(genres: movie.genres))
     }
     
     private func getPosterURL(posterPath: String?) -> URL? {
@@ -24,5 +29,21 @@ class DefaultMovieDisplayModelFactory: MovieDisplayModelFactory {
             return nil
         }
         return posterURLFactory.create(posterPath: posterPath)
+    }
+    
+    private func getDateString(date: Date?) -> String? {
+        guard let date = date else {
+            return nil
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        return dateFormatter.string(from: date)
+    }
+    
+    private func getGenresString(genres: [String]?) -> String? {
+        guard let genres = genres else {
+            return nil
+        }
+        return genres.joined(separator: ", ")
     }
 }

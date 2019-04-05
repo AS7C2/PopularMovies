@@ -16,7 +16,8 @@ extension MovieDTO {
                 posterPath: json["poster_path"].string,
                 title: json["title"].string,
                 releaseDate: parseDate(string: json["release_date"].string),
-                overview: json["overview"].string)
+                overview: json["overview"].string,
+                genres: getGenres(json: json))
         } else {
             return nil
         }
@@ -30,5 +31,18 @@ extension MovieDTO {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.date(from: string)
+    }
+    
+    private static func getGenres(json: JSON) -> [String]? {
+        guard let genres = json["genres"].array else {
+            return nil
+        }
+        var result: [String] = []
+        for genre in genres {
+            if let name = genre["name"].string {
+                result.append(name)
+            }
+        }
+        return result
     }
 }

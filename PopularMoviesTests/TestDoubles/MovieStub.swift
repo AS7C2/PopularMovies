@@ -9,13 +9,10 @@
 import Foundation
 
 class MovieStub: Movie {
+    var genres: [String]?
     var releaseDate: Date?
-    
     var overview: String?
-    
     var id: Int = 0
-    
     var posterPath: String?
-    
     var title: String?
 }

@@ -11,4 +11,7 @@ import Foundation
 struct MovieDisplayModel {
     let posterURL: URL?
     let title: String?
+    let releaseDate: String?
+    let overview: String?
+    let genres: String?
 }
